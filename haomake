@@ -1,0 +1,13 @@
+main:main.o base32.o hmac.o sha1.o
+main.o:main.c base32.h hmac.h sha1.h
+	gcc  --std=gnu99 -Wall  -g  -c $<
+base32.o: base32.c base32.h
+	gcc  --std=gnu99 -Wall  -g  -c $<
+hmac.o: hmac.c hmac.h sha1.h
+	gcc  --std=gnu99 -Wall  -g  -c $<
+sha1.o: sha1.c sha1.h
+	gcc  --std=gnu99 -Wall  -g  -c $<
+b64.o: b64.c b64.h
+	gcc  --std=gnu99 -Wall  -g  -c $<
+clean:
+	rm *.o main
