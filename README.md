@@ -3,6 +3,8 @@ generate main
 make -f haomake
 
 generate hmac_test
+make -f hmactestmake
 
-generate , pam_goole
+generate , google_authenticator
+make
 
